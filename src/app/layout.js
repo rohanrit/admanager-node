@@ -1,45 +1,41 @@
-import { Poppins } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Space_Grotesk, Manrope } from 'next/font/google'
 import './globals.css'
 import ThemeSwitcher from '@/components/ThemeSwitcher'
 import AnimatedDots from '@/components/AnimatedDots'
 import CursorTrail from '@/components/CursorTrail'
 
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
 })
 
-const clashDisplay = localFont({
-  src: [
-    { path: './fonts/ClashDisplay-Regular.woff2', weight: '400', style: 'normal' },
-    { path: './fonts/ClashDisplay-Medium.woff2', weight: '500', style: 'normal' },
-    { path: './fonts/ClashDisplay-Semibold.woff2', weight: '600', style: 'normal' },
-    { path: './fonts/ClashDisplay-Bold.woff2', weight: '700', style: 'normal' },
-  ],
-  variable: '--font-heading',
-  display: 'swap',
-})
-
 export const metadata = {
-  title: 'AdVantage — Precision Ads That Drive Real Business Growth',
-  description:
-    'Run high-performance campaigns across Video, OTT, and Connected TV — powered by data, optimized for ROI. Performance marketing, programmatic ads, and CTV advertising.',
-  keywords:
-    'performance marketing, video advertising, CTV ads, programmatic advertising, OTT ads, connected TV, digital advertising',
-  openGraph: {
-    title: 'AdVantage — Precision Ads That Drive Real Business Growth',
-    description:
-      'Run high-performance campaigns across Video, OTT, and Connected TV — powered by data, optimized for ROI.',
-    type: 'website',
+  title: {
+    default: 'AdTech Dynamics — Precision Programmatic Advertising',
+    template: '%s | AdTech Dynamics'
   },
+  description:
+    'Engineering the future of programmatic advertising. Data-driven precision, high-velocity bidding, and ethical performance marketing.',
+  keywords:
+    'programmatic advertising, adtech, data science, performance marketing, real-time bidding, digital advertising',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${clashDisplay.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`}>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
+        />
+      </head>
       <body>
         <CursorTrail />
         <AnimatedDots />

@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* ══════════════════════════════════════════════════════════
    ADVANTAGE — LIGHT THEME DESIGN SYSTEM
    Bright colors · 3D shapes · Premium feel
@@ -10,6 +12,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
+  font-display: block;
 }
 
 :root {
@@ -2046,6 +2053,7 @@ justify-content: center;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
+
 }
 
 @media (max-width: 768px) {
